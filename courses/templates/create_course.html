@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if request.user.is_authenticated %}
+<div class='min-vh-100'>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit"class="bg-blue-500 text-white py-2 px-4 rounded-lg" >Submit</button>
+    </form>
+
+ 
+</div>
+
+
+
+
+<div>   
+
+</div>
+{% endif %}
+{% endblock %} 
